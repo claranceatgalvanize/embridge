@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div card_contianer>
+  <div class="card" *ngFor="let job of jobs">
+    <div class="header">
+      <div class="avatar">
+        <img [src]="job.company_logo" alt="brand mark" />
+      </div>
+      <div class="date_posted">{{ job.created_at | date }}</div>
+    </div>
+    <div class="main">
+      <h5 class="title">{{ job.company }}</h5>
+      <h3 class="role">{{ job.title }}</h3>
+      <p class="title">{{ job.type }}</p>
+    </div>
+  </div>
+</div>
