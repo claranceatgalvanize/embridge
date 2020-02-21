@@ -1,0 +1,43 @@
+.margin {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.brand {
+  width: 150px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.space {
+  flex: 1;
+}
+
+.nav_action {
+  & button {
+    margin-left: 50px;
+    padding: 25px 0;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    background: none;
+    color: #666666;
+
+    &:hover {
+      box-shadow: inset 0 -6px 0 0 #7ac943;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+      color: #7ac943;
+      box-shadow: none;
+    }
+  }
+}
