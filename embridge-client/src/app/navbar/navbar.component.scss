@@ -41,3 +41,21 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .margin {
+    padding: 0 16px;
+  }
+  .nav_action,
+  .space {
+    display: none;
+  }
+  .brand {
+    width: 150px;
+    padding: 25px 0;
+
+    & img {
+      width: 100%;
+    }
+  }
+}

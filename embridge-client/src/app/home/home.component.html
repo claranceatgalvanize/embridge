@@ -8,9 +8,9 @@
       <div class="date_posted">{{ job.created_at | date }}</div>
     </div>
     <div class="main">
-      <h5 class="title">{{ job.company }}</h5>
-      <h3 class="role">{{ job.title }}</h3>
-      <p class="title">{{ job.location }}</p>
+      <h5 class="company">{{ job.company | uppercase }}</h5>
+      <h3 class="role">{{ job.title | titlecase }}</h3>
+      <p class="location">{{ job.location | uppercase }}</p>
     </div>
   </div>
 </div>
