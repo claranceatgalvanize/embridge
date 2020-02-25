@@ -11,6 +11,7 @@
   }
 
   &:hover .card:hover {
+    cursor: pointer;
     background: #7ac943;
     transform: scale(1);
     box-shadow: 0 8px 20px 0px rgba($color: #7ac943, $alpha: 1);
@@ -38,6 +39,10 @@
   overflow: hidden;
   position: relative;
   transition: 0.2s all;
+
+  &:focus {
+    outline: none;
+  }
 
   .header {
     padding: 25px;

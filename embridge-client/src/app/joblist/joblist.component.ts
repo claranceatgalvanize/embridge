@@ -9,16 +9,18 @@ import { Job } from "src/models/job-model";
 })
 export class JoblistComponent implements OnInit {
   jobs: Job[] = [];
+  loadingState: boolean = true;
 
-  constructor(private jobApi: JoblistService) {}
+  constructor(private joblistService: JoblistService) {}
 
   ngOnInit() {
-    this.jobApi.getJobs().subscribe(
-      res => {
-        this.jobs = res;
-        console.log("subscriber: here you go :)", this.jobs);
-      },
-      err => console.log(err)
-    );
+    this.getJobs();
+  }
+
+  getJobs(): void {
+    this.joblistService.getJobs().subscribe(jobs => {
+      this.jobs = [...jobs];
+      this.loadingState = false;
+    });
   }
 }

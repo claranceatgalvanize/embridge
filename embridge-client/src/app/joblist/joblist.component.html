@@ -1,5 +1,10 @@
+<app-line-prelarder *ngIf="loadingState"></app-line-prelarder>
 <div class="card_container">
-  <div class="card" *ngFor="let job of jobs">
+  <div
+    class="card"
+    *ngFor="let job of jobs"
+    routerLink="/job/details/{{ job.id }}"
+  >
     <div class="header">
       <div class="avatar">
         <img [src]="job.company_logo" alt="brand mark" />
