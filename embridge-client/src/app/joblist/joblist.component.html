@@ -7,7 +7,11 @@
   >
     <div class="header">
       <div class="avatar">
-        <img [src]="job.company_logo" alt="brand mark" />
+        <img
+          *ngIf="job.company_logo"
+          [src]="job.company_logo"
+          alt="brand mark"
+        />
       </div>
       <span class="space"></span>
       <div class="date_posted">{{ job.created_at | date }}</div>

@@ -12,6 +12,7 @@ import { Job } from "src/models/job-model";
 export class JobDetailComponent implements OnInit {
   @Input() job: Job;
   loadingState: boolean = true;
+  apply: boolean = false;
 
   constructor(
     private jobService: JoblistService,
@@ -25,8 +26,14 @@ export class JobDetailComponent implements OnInit {
 
   getJob(id: any): void {
     this.jobService.getJob(id).subscribe(data => {
-      (this.job = data), (this.loadingState = false);
+      this.job = data;
+      this.loadingState = false;
+      console.log(this.job);
     });
+  }
+
+  howToApply() {
+    return (this.apply = true);
   }
 
   goBack(): void {

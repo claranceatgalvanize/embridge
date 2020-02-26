@@ -1,0 +1,153 @@
+.job_card {
+  padding: 50px 100px;
+
+  .main {
+    padding: 50px;
+    background: #fff;
+    border-radius: 16px;
+
+    .description {
+      white-space: pre-wrap;
+      tab-size: 2;
+    }
+  }
+}
+
+.how_to_apply {
+  background: #ffe604;
+  padding: 16px 16px 0 16px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.company_card {
+  background: rgb(122, 201, 67);
+  background: linear-gradient(
+    -135deg,
+    rgba(122, 201, 67, 1) 8%,
+    rgb(76, 165, 13) 100%
+  );
+
+  overflow: hidden;
+  padding: 32px 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid rgba($color: #000000, $alpha: 0.05);
+    padding: 16px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .header,
+  .main {
+    z-index: 1;
+  }
+
+  .main {
+    padding: 0 0 0 32px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .company_job_title {
+      width: 400px;
+    }
+
+    .company,
+    .location,
+    .title {
+      line-height: 1.5em;
+      color: #fff;
+    }
+
+    .space {
+      flex: 1;
+    }
+
+    .company {
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+
+    .title {
+      font-weight: 700;
+    }
+
+    .badge {
+      background: #ffe604;
+      padding: 1px 8px;
+      display: inline-block;
+      color: #47a304;
+      font-size: 0.5em;
+      border-radius: 50px;
+    }
+
+    .address {
+      text-align: right;
+      .action {
+        letter-spacing: 0.2em;
+        font-size: 0.8em;
+        font-weight: 700;
+        padding: 8px 16px;
+        display: inline-block;
+        color: #fff;
+        border-radius: 50px;
+        box-shadow: 0 0 0 1.5px #fff;
+        text-decoration: none;
+
+        &:hover {
+          color: #7ac943;
+          box-shadow: inset 0 0 0 100px #fff;
+          transition: 0.3s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .circles {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgb(122, 201, 67);
+    background: linear-gradient(
+      -135deg,
+      rgba(122, 201, 67, 1) 8%,
+      rgb(65, 151, 3) 100%
+    );
+
+    &.one {
+      left: -300px;
+      top: 30px;
+      width: 850px;
+      height: 850px;
+    }
+    &.two {
+      right: -100px;
+      top: -100px;
+      width: 200px;
+      height: 200px;
+      opacity: 0.3;
+    }
+    &.three {
+      left: 650px;
+      bottom: 30px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
