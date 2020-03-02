@@ -1,103 +1,114 @@
-// .card_container {
-//   display: flex;
-//   justify-content: space-evenly;
-//   flex-wrap: wrap;
-//   width: 100%;
-//   padding: 50px 0;
+:host {
+  * {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+}
 
-//   &:hover .card {
-//     transform: scale(0.98);
-//     box-shadow: none;
-//   }
+.home_wrapper {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("http://www.baltana.com/files/wallpapers-14/Man-Made-Bridge-Background-Wallpapers-36506.jpg");
+  background-size: 100%;
+  -webkit-filter: grayscale(100%);
+  background-size: 250%;
 
-//   &:hover .card:hover {
-//     background: #7ac943;
-//     transform: scale(1);
-//     box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
-//     .date_posted,
-//     .company,
-//     .role,
-//     .location {
-//       color: #fff;
-//     }
-//     .header {
-//       border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
-//       .avatar {
-//         border: 8px solid rgba($color: #000000, $alpha: 0.05);
-//       }
-//     }
-//   }
-// }
+  .scroll-downs {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
 
-// .card {
-//   flex: auto;
-//   width: 280px;
-//   margin: 0 20px 20px 0;
-//   background: #fff;
-//   border-radius: 16px;
-//   overflow: hidden;
-//   position: relative;
-//   transition: 0.2s all;
+    width: 34px;
+    height: 55px;
+  }
+  .mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+  }
+  .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+    animation-iteration-count: infinite;
+  }
+  @keyframes scroll {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(15px);
+      opacity: 0;
+    }
+  }
 
-//   .header {
-//     padding: 25px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
-//     position: relative;
+  .divider {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 85%;
 
-//     .avatar {
-//       position: absolute;
-//       top: 30px;
-//       width: 30px;
-//       height: 30px;
-//       border-radius: 50%;
-//       border: 8px solid rgba($color: #000000, $alpha: 0.05);
-//       padding: 16px;
-//       background: #fff;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
+    span {
+      opacity: 0.2;
+      width: 1px;
+      background: #fff;
+      height: 82%;
+    }
+  }
 
-//       img {
-//         width: 100%;
-//       }
-//     }
+  .signin,
+  .findyourfit {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
 
-//     .space {
-//       flex: 1;
-//     }
+    &:hover {
+      background: rgba($color: #fff, $alpha: 0.01);
+    }
 
-//     .date_posted {
-//       font-size: 0.8em;
-//       color: #bbb;
-//     }
-//   }
+    h3 {
+      transform: scale(0.5);
+      text-align: center;
+      padding: 0 100px;
+      line-height: 1;
+      letter-spacing: 1px;
+      font-family: "Anton";
+      font-size: 80px;
+    }
 
-//   .main {
-//     padding: 60px 25px 25px 25px;
-
-//     & .company,
-//     .location {
-//       font-size: 0.8em;
-//       letter-spacing: 0.5px;
-//     }
-
-//     & .role {
-//       font-size: 1.1em;
-//       line-height: 1.3em;
-//       font-weight: 700;
-//       color: #000;
-//       margin: 8px 0;
-//     }
-//   }
-// }
-
-// @media (max-width: 425px) {
-//   .card {
-//     display: block;
-//     width: 100%;
-//     margin: 0 0 16px 0;
-//   }
-// }
+    button {
+      color: #000;
+      letter-spacing: 1px;
+      font-family: "Anton";
+      font-size: 16px;
+      width: 300px;
+      padding: 16px 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}

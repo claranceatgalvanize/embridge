@@ -1,107 +1,98 @@
-.card_container {
+.job_container {
+  * {
+    margin: 0;
+    padding: 0;
+  }
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 50px 100px;
+  min-height: 100vh;
+  max-width: 100vw;
 
-  &:hover .card {
-    transform: scale(0.98);
-    box-shadow: none;
-  }
+  .search {
+    border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
+    background: #fff;
+    max-width: 400px;
+    padding: 75px 50px;
+    position: fixed;
+    height: 100%;
+    margin-top: 68px;
 
-  &:hover .card:hover {
-    cursor: pointer;
-    background: #7ac943;
-    transform: scale(1);
-    box-shadow: 0 8px 20px 0px rgba($color: #7ac943, $alpha: 1);
-    .date_posted,
-    .company,
-    .role,
-    .location {
-      color: #fff;
-    }
-    .header {
-      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
-      .avatar {
-        border: 8px solid rgba($color: #000000, $alpha: 0.05);
-      }
-    }
-  }
-}
-
-.card {
-  flex: auto;
-  width: 280px;
-  margin: 0 20px 20px 0;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  transition: 0.2s all;
-
-  &:focus {
-    outline: none;
-  }
-
-  .header {
-    padding: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
-    position: relative;
-
-    .avatar {
-      position: absolute;
-      top: 30px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 8px solid rgba($color: #000000, $alpha: 0.05);
-      padding: 16px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .space {
-      flex: 1;
-    }
-
-    .date_posted {
-      font-size: 0.8em;
-      color: #bbb;
-    }
-  }
-
-  .main {
-    padding: 60px 25px 25px 25px;
-
-    & .company,
-    .location {
-      font-size: 0.8em;
-      letter-spacing: 0.5px;
-    }
-
-    & .role {
-      font-size: 1.1em;
-      line-height: 1.3em;
-      font-weight: 700;
+    h3 {
+      font-size: 32px;
       color: #000;
-      margin: 8px 0;
+      width: 100%;
+      line-height: 1em;
+      font-family: "Anton";
+      text-transform: uppercase;
+      margin-bottom: 50px;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 12px;
+
+      &:focus {
+        outline: none;
+        border: 1px solid #000;
+      }
     }
   }
-}
 
-@media (max-width: 425px) {
-  .card {
-    display: block;
-    width: 100%;
-    margin: 0 0 16px 0;
+  .job_list {
+    flex: 1;
+    margin: 67px 0 0 400px;
+    background: rgba($color: #000000, $alpha: 0.1);
+
+    .card {
+      background: #fff;
+      margin-bottom: 1px;
+      padding: 32px 64px;
+
+      .header {
+        display: flex;
+        align-items: center;
+
+        .role {
+          font-weight: 100;
+          font-size: 16px;
+          color: #000;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-family: "Anton";
+          margin-bottom: 5px;
+        }
+        .space {
+          flex: 1;
+        }
+      }
+
+      .main {
+        display: flex;
+        .company {
+          margin-right: 20px;
+          color: #000;
+        }
+      }
+
+      &:focus {
+        cursor: pointer;
+        box-shadow: inset 1500px 0 0 0 #000;
+        transition: all 0.5s ease-in-out;
+        .header *,
+        .main * {
+          color: #fff;
+        }
+        outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 1500px 0 0 0 #000;
+        transition: all 0.5s ease-in-out;
+        .header *,
+        .main * {
+          color: #fff;
+        }
+      }
+    }
   }
 }

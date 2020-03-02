@@ -8,6 +8,6 @@ export class Job {
   location: string;
   title: string;
   description: string;
-  howToApply: string;
+  how_to_apply: string;
   company_logo: string;
 }

@@ -30,14 +30,14 @@ export class JoblistService {
       );
   }
 
-  getJob(id: string): Observable<Job[]> {
+  getJob(id: string): Observable<Job> {
     const url = `${jobapi}/${id}.json?markdown=true`;
     return this.http
-      .get<Job[]>(url)
+      .get<Job>(url)
       .pipe(
         tap(
           () => this.log("Fetched job successfully!!!"),
-          catchError(this.handleError<Job[]>("getJobs", []))
+          catchError(this.handleError<Job>("getJobs", new Job()))
         )
       );
   }

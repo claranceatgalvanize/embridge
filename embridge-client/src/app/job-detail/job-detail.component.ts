@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import marked from "marked";
 
 import { JoblistService } from "../services/joblist.service";
 import { Job } from "src/models/job-model";
@@ -26,14 +27,17 @@ export class JobDetailComponent implements OnInit {
 
   getJob(id: any): void {
     this.jobService.getJob(id).subscribe(data => {
-      this.job = data;
+      const [how_to_apply] = data.how_to_apply.match(
+        /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
+      );
+      const description = marked(data.description);
+      this.job = {
+        ...data,
+        description,
+        how_to_apply
+      };
       this.loadingState = false;
-      console.log(this.job);
     });
-  }
-
-  howToApply() {
-    return (this.apply = true);
   }
 
   goBack(): void {

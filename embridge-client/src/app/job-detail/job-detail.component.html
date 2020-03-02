@@ -1,51 +1,52 @@
 <app-line-prelarder *ngIf="loadingState"></app-line-prelarder>
-<div id="apply" class="card_container">
+<div id="apply" class="job_details">
   <div *ngIf="job" class="company_card">
-    <span class="circles one"></span>
-    <span class="circles two"></span>
-    <span class="circles three"></span>
     <div class="header">
-      <div class="avatar">
-        <img
-          *ngIf="job.company_logo"
-          [src]="job?.company_logo"
-          alt="brand mark"
-        />
-      </div>
-    </div>
-    <div class="main">
-      <div class="company_job_title">
-        <h5 class="company">{{ job?.company | uppercase }}</h5>
-        <h5 class="title">
+      <span class="job_title">
+        <p class="badge">{{ job?.type | uppercase }}</p>
+        <h3>
           {{ job?.title | uppercase }}
-          <span class="badge">{{ job?.type }}</span>
-        </h5>
-        <p class="location">{{ job?.location | uppercase }}</p>
-      </div>
-      <span class="space"></span>
-      <div class="address">
+        </h3>
+      </span>
+      <div class="company_badge">
+        <span>
+          <h5 class="company">{{ job?.company | uppercase }},</h5>
+          <span class="location">{{ job?.location | uppercase }}</span>
+        </span>
         <a
-          class="action"
+          *ngIf="job.how_to_apply"
+          href="{{ job?.how_to_apply }}"
           target="_blank"
-          rel="noopener noreferrer"
-          *ngIf="job?.company_url"
-          [href]=""
-          (click)="howToApply()"
-          >HOW TO APPLY</a
-        >
+          >CLICK HERE TO APPLY
+        </a>
       </div>
     </div>
-  </div>
-  <div *ngIf="apply" class="how_to_apply">
-    <pre>
-      {{ job?.how_to_apply }}
-    </pre>
-  </div>
-  <div *ngIf="job" class="job_card">
     <div class="main">
-      <pre class="description">
-      {{ job?.description }}
-      </pre>
+      <div class="description_warpper">
+        <h3>Job Description</h3>
+        <div class="description" [innerHTML]="job?.description"></div>
+      </div>
+      <div class="job_details">
+        <h3>Job Details</h3>
+        <ul>
+          <li class="badge">
+            <small>Job Title</small> <span>{{ job?.title | uppercase }}</span>
+          </li>
+          <li class="badge">
+            <small>Job Type</small> <span>{{ job?.type | uppercase }}</span>
+          </li>
+          <li class="company">
+            <small>Employer</small> <span>{{ job?.company | uppercase }}</span>
+          </li>
+          <li class="company">
+            <small>Location</small> <span>{{ job?.location | uppercase }}</span>
+          </li>
+          <li class="company">
+            <small>Posted</small>
+            <span>{{ job?.created_at | uppercase | date }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

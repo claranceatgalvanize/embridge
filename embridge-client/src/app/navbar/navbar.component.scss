@@ -1,5 +1,17 @@
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  * {
+    font-family: "Anton";
+    color: #000;
+    margin: 0;
+  }
+}
+
 .margin {
-  padding: 0 100px;
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,17 +47,17 @@
     font-size: 1rem;
     letter-spacing: 0.15em;
     background: none;
-    color: #666666;
+    color: #000;
 
     &:hover {
       cursor: pointer;
-      box-shadow: inset 0 -6px 0 0 #7ac943;
-      transition: all 0.3s ease-in-out;
+      box-shadow: inset 0 -8px 0 0 #000;
+      transition: all 0.5s ease-in-out;
     }
 
     &:focus {
       outline: none;
-      color: #7ac943;
+      color: #999;
       box-shadow: none;
     }
   }

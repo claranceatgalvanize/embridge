@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Lato&display=swap");
+
 html,
 body,
 div,
@@ -79,15 +81,13 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
   border: 0;
-  font-size: 1rem;
   font: inherit;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   vertical-align: baseline;
   line-height: 1.2rem;
-  color: #666666;
+  color: #333;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -106,10 +106,6 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
 blockquote,
 q {
   quotes: none;
@@ -124,4 +120,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input {
+  box-sizing: border-box;
 }
