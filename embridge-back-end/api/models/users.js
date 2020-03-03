@@ -1,5 +1,6 @@
-const crypto = required("cryto"),
-  jwt = required("jsonwebtoken");
+const crypto = require("crypto"),
+  mongoose = require("mongoose"),
+  jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -43,3 +44,5 @@ userSchema.methods.generateJwt = () => {
     "MY_SECRET"
   );
 };
+
+mongoose.model("User", userSchema);
