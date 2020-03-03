@@ -19,10 +19,9 @@ export class AuthService {
   }
 
   private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem("mean-token");
-    }
-    return this.token;
+    return !this.token
+      ? (this.token = localStorage.getItem("mean-token"))
+      : this.token;
   }
 
   public logout(): void {
@@ -64,24 +63,21 @@ export class AuthService {
 
     const request = base.pipe(
       map((data: TokenResponse) => {
-        if (data) {
-          this.saveToken(data.token);
-        }
-        return data;
+        return data ? this.saveToken(data.token) : data;
       })
     );
     return request;
   }
 
-  public register(user: TokenPayload): Observable<TokenPayload[]> {
+  public register(user: TokenPayload): Observable<any> {
     return this.request("post", "register", user);
   }
 
-  public login(user: TokenPayload): Observable<TokenPayload[]> {
+  public login(user: TokenPayload): Observable<any> {
     return this.request("post", "login", user);
   }
 
-  public profile(): Observable<TokenPayload> {
+  public profile(): Observable<any> {
     return this.request("get", "profile");
   }
 }

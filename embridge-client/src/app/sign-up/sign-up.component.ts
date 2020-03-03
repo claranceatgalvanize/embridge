@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
   signUp() {
     this.auth.register(this.credentials).subscribe(
       () => {
-        this.router.navigateByUrl("/job-list");
+        this.router.navigateByUrl("/joblist");
       },
       err => console.log(err)
     );

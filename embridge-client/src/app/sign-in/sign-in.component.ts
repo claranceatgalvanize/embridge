@@ -20,10 +20,9 @@ export class SignInComponent implements OnInit {
   signIn() {
     this.auth.login(this.credentials).subscribe(
       () => {
-        this.router.navigateByUrl("/job-list");
+        this.router.navigateByUrl("/joblist");
       },
       err => console.log(err)
     );
-    console.log("User Credentials: ", this.credentials);
   }
 }
