@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { JoblistService } from "../services/joblist.service";
-import { Job } from "src/models/job-model";
+import { JobDetails } from "../models/job-details";
 
 @Component({
   selector: "app-joblist",
@@ -8,7 +8,7 @@ import { Job } from "src/models/job-model";
   styleUrls: ["./joblist.component.scss"]
 })
 export class JoblistComponent implements OnInit {
-  jobs: Job[] = [];
+  jobs: JobDetails[] = [];
   searchTerm: string;
   loadingState: boolean = true;
 
@@ -24,10 +24,4 @@ export class JoblistComponent implements OnInit {
       this.loadingState = false;
     });
   }
-
-  // jobsearch(term: string): void {
-  //   term.toLocaleLowerCase();
-  //   const newJobList = this.jobs.filter(job => job.includes(term));
-  //   this.jobs = newJobList;
-  // }
 }

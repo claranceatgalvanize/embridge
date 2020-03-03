@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import marked from "marked";
 
 import { JoblistService } from "../services/joblist.service";
-import { Job } from "src/models/job-model";
+import { JobDetails } from "../models/job-details";
 
 @Component({
   selector: "app-job-detail",
@@ -11,9 +11,9 @@ import { Job } from "src/models/job-model";
   styleUrls: ["./job-detail.component.scss"]
 })
 export class JobDetailComponent implements OnInit {
-  @Input() job: Job;
-  loadingState: boolean = true;
-  apply: boolean = false;
+  @Input() job: JobDetails;
+  loadingState = true;
+  apply = false;
 
   constructor(
     private jobService: JoblistService,
