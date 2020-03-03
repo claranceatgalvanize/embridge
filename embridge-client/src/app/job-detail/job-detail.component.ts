@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import marked from "marked";
 
 import { JoblistService } from "../services/joblist.service";
-import { JobDetails } from "../models/job-details";
+import { JobDetails } from "../models/models";
 
 @Component({
   selector: "app-job-detail",

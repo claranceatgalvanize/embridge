@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sign-in",
@@ -11,11 +13,17 @@ export class SignInComponent implements OnInit {
     password: ""
   };
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
   signIn() {
+    this.auth.login(this.credentials).subscribe(
+      () => {
+        this.router.navigateByUrl("/job-list");
+      },
+      err => console.log(err)
+    );
     console.log("User Credentials: ", this.credentials);
   }
 }

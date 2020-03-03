@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { JoblistService } from "../services/joblist.service";
-import { JobDetails } from "../models/job-details";
+import { JobDetails } from "../models/models";
 
 @Component({
   selector: "app-joblist",

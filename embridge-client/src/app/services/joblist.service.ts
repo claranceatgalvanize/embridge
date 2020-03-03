@@ -4,7 +4,7 @@ import { tap, catchError } from "rxjs/operators";
 import { Observable, of } from "rxjs";
 
 import { MessageService } from "./message.service";
-import { JobDetails } from "../models/job-details";
+import { JobDetails } from "../models/models";
 
 const jobapi =
   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions";
