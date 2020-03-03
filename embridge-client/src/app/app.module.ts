@@ -11,6 +11,9 @@ import { JoblistComponent } from "./joblist/joblist.component";
 import { JobDetailComponent } from "./job-detail/job-detail.component";
 import { LinePrelarderComponent } from "./line-prelarder/line-prelarder.component";
 import { FilterPipe } from "./filter.pipe";
+import { SignInComponent } from './sign-in/sign-in.component';
+import { AboutComponent } from './about/about.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FilterPipe } from "./filter.pipe";
     JoblistComponent,
     JobDetailComponent,
     LinePrelarderComponent,
-    FilterPipe
+    FilterPipe,
+    SignInComponent,
+    AboutComponent,
+    SignUpComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

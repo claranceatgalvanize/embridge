@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="signin_wrapper">
+    <div class="header">
+      <span class="graphic"
+        ><img src="../../assets/brand/embg-full-color.svg" alt="Brand Mark"
+      /></span>
+      <div class="caption">
+        <h3>WELCOME!</h3>
+        <p>Enter your credentials to create your embridge account.</p>
+      </div>
+    </div>
+    <div class="main">
+      <form (submit)="signUp()">
+        <div class="name">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            [(ngModel)]="credentials.name"
+            placeholder="Clarance Farley"
+          />
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="credentials.email"
+            placeholder="clarance@embridge.com"
+          />
+        </div>
+        <div class="password">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            [(ngModel)]="credentials.password"
+            placeholder="••••••••"
+          />
+        </div>
+        <div class="btn"><button>SIGN UP</button></div>
+      </form>
+    </div>
+    <div class="footer">
+      <small
+        >Already a member?
+        <span routerLink="/sign-in" class="signup_btn">SIGN IN</span></small
+      >
+    </div>
+  </div>
+</div>

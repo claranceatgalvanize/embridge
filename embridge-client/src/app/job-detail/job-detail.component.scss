@@ -76,7 +76,6 @@
       font-size: 16px;
       font-weight: 700;
       padding: 32px 50px;
-      // border-bottom: 1px dotted rgba($color: #000000, $alpha: 0.1);
     }
   }
 
@@ -85,7 +84,7 @@
   }
 
   .job_details {
-    // border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
     h3 {
       font-size: 16px;
       font-weight: 700;
@@ -105,6 +104,8 @@
 
         small {
           font-weight: 700;
+          text-transform: uppercase;
+          font-size: 10px;
         }
 
         span {

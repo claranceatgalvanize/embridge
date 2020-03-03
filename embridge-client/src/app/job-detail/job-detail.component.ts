@@ -27,14 +27,15 @@ export class JobDetailComponent implements OnInit {
 
   getJob(id: any): void {
     this.jobService.getJob(id).subscribe(data => {
-      const [how_to_apply] = data.how_to_apply.match(
+      let [how_to_apply] = data.how_to_apply.match(
         /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
       );
+      const apply = `https://${how_to_apply}`;
       const description = marked(data.description);
       this.job = {
         ...data,
         description,
-        how_to_apply
+        how_to_apply: apply
       };
       this.loadingState = false;
     });
