@@ -1,5 +1,5 @@
 {
-  "name": "MEAN-stack-authentication",
+  "name": "Embridge backend",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,7 +12,6 @@
     "debug": "^4.1.0",
     "express": "^4.16.4",
     "express-jwt": "^3.0.1",
-    "jade": "~1.9.1",
     "jsonwebtoken": "^5.0.4",
     "lodash": "^4.17.5",
     "mongoose": "^4.1.2",
