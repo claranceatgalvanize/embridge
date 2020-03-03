@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
     res.status(401);
-    res.json({ message: err.name + ": " + err.message });
+    res.json({ message: `${err.name}: ${err.message}` });
   }
 });
 
@@ -41,5 +41,9 @@ if (app.get("env") === "development") {
     });
   });
 }
+
+app.listen(4200, () => {
+  console.log("listening on port 4200");
+});
 
 module.exports = app;
