@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
+
+import { AuthService } from "../services/auth.service";
+import { MessageService } from "../services/message.service";
 
 @Component({
   selector: "app-sign-up",
@@ -14,7 +16,11 @@ export class SignUpComponent implements OnInit {
     password: ""
   };
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private msg: MessageService
+  ) {}
 
   ngOnInit() {}
 
@@ -23,8 +29,8 @@ export class SignUpComponent implements OnInit {
       () => {
         this.router.navigateByUrl("/joblist");
       },
-      err => console.log(err)
+      err => this.msg.add(err)
     );
-    console.log(this.credentials);
+    this.msg.add(this.credentials.name);
   }
 }

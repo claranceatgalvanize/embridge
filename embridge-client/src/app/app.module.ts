@@ -14,6 +14,8 @@ import { FilterPipe } from "./filter.pipe";
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AboutComponent } from './about/about.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FilterPipe,
     SignInComponent,
     AboutComponent,
-    SignUpComponent
+    SignUpComponent,
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

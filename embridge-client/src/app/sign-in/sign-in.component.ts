@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
+import { MessageService } from "../services/message.service";
 
 @Component({
   selector: "app-sign-in",
@@ -13,7 +14,11 @@ export class SignInComponent implements OnInit {
     password: ""
   };
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private msg: MessageService
+  ) {}
 
   ngOnInit() {}
 
@@ -22,7 +27,7 @@ export class SignInComponent implements OnInit {
       () => {
         this.router.navigateByUrl("/joblist");
       },
-      err => console.log(err)
+      err => this.msg.add(err)
     );
   }
 }
