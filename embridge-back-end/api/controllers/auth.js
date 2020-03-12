@@ -1,15 +1,15 @@
-const passport = require("passport"),
-  mongoose = require("mongoose"),
-  User = mongoose.model("User");
+const passport = require("passport");
+const mongoose = require("mongoose");
+const User = mongoose.model("User");
 
 module.exports.register = (req, res) => {
-  const user = new User(),
-    { name, email, password } = req.body;
+  const user = new User();
 
-  user.name = name;
-  user.email = email;
+  user.name = req.body.name;
+  user.email = req.body.email;
 
-  user.setPassword(password);
+  user.setPassword(req.body.password);
+
   user.save(err => {
     let token;
     token = user.generateJwt();
@@ -22,11 +22,15 @@ module.exports.register = (req, res) => {
 
 module.exports.login = (req, res) => {
   passport.authenticate("local", (err, user, info) => {
-    let token;
+    var token;
+
+    // If Passport throws/catches an error
     if (err) {
       res.status(404).json(err);
       return;
     }
+
+    // If a user is found
     if (user) {
       token = user.generateJwt();
       res.status(200);
@@ -34,6 +38,7 @@ module.exports.login = (req, res) => {
         token: token
       });
     } else {
+      // If user is not found
       res.status(401).json(info);
     }
   })(req, res);
