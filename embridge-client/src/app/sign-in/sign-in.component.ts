@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
 import { MessageService } from "../services/message.service";
+import { TokenPayload } from "../models/models";
 
 @Component({
   selector: "app-sign-in",
@@ -9,7 +10,7 @@ import { MessageService } from "../services/message.service";
   styleUrls: ["./sign-in.component.scss"]
 })
 export class SignInComponent implements OnInit {
-  credentials = {
+  credentials: TokenPayload = {
     email: "",
     password: ""
   };

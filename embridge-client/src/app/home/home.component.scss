@@ -2,108 +2,145 @@
   * {
     margin: 0;
     padding: 0;
-    color: #fff;
   }
 }
 
 .home_wrapper {
   background: #000;
   height: 100vh;
+  padding: 70px 0 0 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 
-  .scroll-downs {
-    position: absolute;
-    bottom: 0;
-    margin: auto;
-
-    width: 34px;
-    height: 55px;
-  }
-  .mousey {
-    width: 3px;
-    padding: 10px 15px;
-    height: 35px;
-    border: 2px solid #fff;
-    border-radius: 25px;
-    opacity: 0.75;
-    box-sizing: content-box;
-  }
-  .scroller {
-    width: 3px;
-    height: 10px;
-    border-radius: 25%;
-    background-color: #fff;
-    animation-name: scroll;
-    animation-duration: 2.2s;
-    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-    animation-iteration-count: infinite;
-  }
-  @keyframes scroll {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(15px);
-      opacity: 0;
-    }
-  }
-
-  .divider {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: 85%;
-
-    span {
-      opacity: 0.2;
-      width: 1px;
-      background: #fff;
-      height: 82%;
-    }
-  }
-
-  .signin,
-  .findyourfit {
-    flex: 1;
+  .signin {
+    width: 300px;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
+    border-right: 1px solid rgba($color: #fff, $alpha: 0.05);
 
-    &:hover {
-      background: rgba($color: #fff, $alpha: 0.01);
+    position: relative;
+
+    .signin_wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transform: rotate(-0.25turn);
+      bottom: 170px;
+      left: -98px;
+
+      button {
+        width: 80px;
+        margin-right: 32px;
+        padding: 8px 16px;
+        background: none;
+        color: #444;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        font-family: rift, sans-serif;
+        border: 1px solid rgba($color: #fff, $alpha: 0.05);
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+
+        &:focus {
+          outline: none;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+      }
+
+      h3 {
+        font-family: "rift", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        color: #444;
+        width: 200px;
+      }
     }
+  }
+
+  .findyourfit {
+    padding: 32px;
 
     h3 {
-      transform: scale(0.5);
-      text-align: center;
-      padding: 0 100px;
-      line-height: 1;
-      letter-spacing: 1px;
-      font-family: "Anton";
-      font-size: 80px;
+      font-family: "futura-pt-condensed", sans-serif;
+      font-weight: 800;
+      letter-spacing: -4px;
+      font-size: 150px;
+      line-height: 0.8;
+      color: #fff;
     }
 
     button {
-      color: #000;
-      letter-spacing: 1px;
-      font-family: "Anton";
-      font-size: 16px;
-      width: 300px;
+      width: 400px;
+      margin-top: 32px;
       padding: 16px 0;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      background: none;
+      color: #aaa;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      font-family: rift, sans-serif;
+      border: 1px solid rgba($color: #aaa, $alpha: 0.09);
+
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      &:focus {
+        outline: none;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home_wrapper {
+    .signin,
+    .divider {
+      display: none;
+    }
+
+    .findyourfit {
+      h3 {
+        padding: 0px;
+      }
+    }
+
+    button {
+      background: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .home_wrapper {
+    button {
+      background: #fff;
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .findyourfit {
+    h3 {
+      transform: scale(0.9);
+      text-align: center;
+      letter-spacing: 1px;
+      font-size: 75px;
+      line-height: 0.75;
+      text-transform: uppercase;
+      font-family: "futura-pt-condensed", sans-serif;
+      font-weight: 800;
     }
   }
 }

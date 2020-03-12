@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
+import { MessageService } from "../services/message.service";
 
 @Component({
   selector: "app-logout",
@@ -7,17 +8,14 @@ import { AuthService } from "../services/auth.service";
   styleUrls: ["./logout.component.scss"]
 })
 export class LogoutComponent implements OnInit {
-  userLogInStatus: boolean = false;
+  constructor(private auth: AuthService, private msg: MessageService) {}
 
-  constructor(private auth: AuthService) {}
-
-  ngOnInit() {
-    this.logInStatus();
-  }
+  ngOnInit() {}
 
   logInStatus() {
-    const isThisUserLogIn = this.auth.isLoggedIn();
-    return isThisUserLogIn ? (this.userLogInStatus = true) : null;
+    if (this.auth.isLoggedIn()) {
+      return true;
+    }
   }
 
   logout() {

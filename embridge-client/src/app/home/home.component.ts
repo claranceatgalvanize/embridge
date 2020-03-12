@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { HomeServiceService } from "../services/home-service.service";
 
 @Component({
   selector: "app-home",
@@ -7,7 +6,7 @@ import { HomeServiceService } from "../services/home-service.service";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private jobapi: HomeServiceService) {}
+  constructor() {}
 
   ngOnInit() {}
 }

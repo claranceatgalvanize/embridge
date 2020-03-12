@@ -6,6 +6,7 @@ import { JobDetailComponent } from "./job-detail/job-detail.component";
 import { AboutComponent } from "./about/about.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
+import { RouteActivatorService as RouteActivator } from "./services/route-activator.service";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
@@ -13,8 +14,16 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "sign-in", component: SignInComponent },
   { path: "sign-up", component: SignUpComponent },
-  { path: "joblist", component: JoblistComponent },
-  { path: "job/details/:id", component: JobDetailComponent }
+  {
+    path: "joblist",
+    component: JoblistComponent,
+    canActivate: [RouteActivator]
+  },
+  {
+    path: "job/details/:id",
+    component: JobDetailComponent,
+    canActivate: [RouteActivator]
+  }
 ];
 
 @NgModule({

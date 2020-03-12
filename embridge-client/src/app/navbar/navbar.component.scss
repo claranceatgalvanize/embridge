@@ -4,7 +4,9 @@ nav {
   z-index: 1;
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
   * {
-    font-family: "Anton";
+    font-family: "rift", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: #000;
     margin: 0;
   }
@@ -45,7 +47,7 @@ nav {
     border: none;
     font-weight: 600;
     font-size: 1rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 1.5px;
     background: none;
     color: #000;
 
@@ -63,9 +65,18 @@ nav {
   }
 }
 
+@media (max-width: 768px) {
+  // nav {
+  //   position: fixed;
+  // }
+}
 @media (max-width: 425px) {
+  // nav {
+  //   position: static;
+  // }
   .margin {
     padding: 0 16px;
+    margin-bottom: 2px;
   }
   .nav_action,
   .space {

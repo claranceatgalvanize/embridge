@@ -1,1 +1,1 @@
-<button (click)="logout()">Log Out</button>
+<button *ngIf="logInStatus()" (click)="logout()">LOG OUT</button>

@@ -13,10 +13,7 @@ const jobapi =
   providedIn: "root"
 })
 export class JoblistService {
-  constructor(
-    private http: HttpClient,
-    private messageService: MessageService
-  ) {}
+  constructor(private http: HttpClient, private msg: MessageService) {}
 
   getJobs(): Observable<JobDetails[]> {
     return this.http
@@ -50,6 +47,6 @@ export class JoblistService {
   }
 
   private log(message: string) {
-    this.messageService.add(`JobService: ${message}`);
+    this.msg.add(`JobService: ${message}`);
   }
 }
