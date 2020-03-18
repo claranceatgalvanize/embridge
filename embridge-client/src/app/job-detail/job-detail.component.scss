@@ -1,264 +1,290 @@
-.header {
-  position: relative;
-  padding: 130px 50px 100px 50px;
-  min-height: 700px;
-  background: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .job_title {
-    p {
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #fff;
-    }
-    h3 {
-      color: #fff;
-      font-weight: 700;
-      font-size: 100px;
-      line-height: 1em;
-      font-family: "Anton";
-      width: 85%;
-      letter-spacing: 3px;
-      margin-bottom: 50px;
-    }
-  }
-
-  .company_badge {
+@media screen and (min-width: 768px) {
+  .header {
+    position: relative;
+    padding: 130px 50px 100px 50px;
+    min-height: 700px;
+    background: #000;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-    span {
+    .back_action {
+      text-align: right;
+      img {
+        width: 32px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .job_title {
+      p {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 16px;
+          margin-right: 8px;
+        }
+
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #fff;
+      }
+      h3 {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 16px;
+          margin-right: 8px;
+        }
+
+        font-family: "futura-pt-condensed", sans-serif;
+        font-weight: 800;
+        letter-spacing: -1px;
+        font-size: 8vw;
+        line-height: 0.8;
+        color: #fff;
+        margin-bottom: 50px;
+      }
+    }
+
+    .company_badge {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      .company {
-        margin-right: 8px;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        small {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 16px;
+            margin-right: 8px;
+          }
+        }
+        .company {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 16px;
+            margin-right: 8px;
+          }
+
+          margin-right: 8px;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+
+      a {
+        bottom: 0;
+        left: 0;
+        position: absolute;
         color: #fff;
+        letter-spacing: 1px;
+        background: #7ac943;
         font-weight: 600;
+        padding: 16px 100px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .main {
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    display: flex;
+
+    .description_warpper {
+      background: #fff;
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 32px 50px;
       }
     }
 
-    a {
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      color: #fff;
-      letter-spacing: 1px;
-      background: #7ac943;
-      font-weight: 600;
-      padding: 16px 100px;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
+    .description {
+      padding: 0 100px 35px 50px;
+    }
+
+    .job_details {
+      border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        border-bottom: 1px dotted rgba($color: #000000, $alpha: 0.1);
+        padding: 32px 0 32px 70px;
+      }
+      ul {
+        list-style: none;
+        min-width: 450px;
+        padding: 50px 100px 0 70px;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          margin-bottom: 32px;
+
+          small {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 16px;
+              margin-right: 8px;
+            }
+
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 10px;
+          }
+
+          span {
+            width: 200px;
+          }
+        }
+      }
     }
   }
 }
 
-.main {
+// @media screen and (min-width: 426) and (max-width: 1200px)
+
+@media screen and (min-width: 320px) and (max-width: 700px) {
+  :hover {
+    min-height: 100vh;
+    max-width: 100vw;
+  }
   * {
     margin: 0;
     padding: 0;
   }
-  display: flex;
-
-  .description_warpper {
-    background: #fff;
-    h3 {
-      font-size: 16px;
-      font-weight: 700;
-      padding: 32px 50px;
-    }
-  }
-
-  .description {
-    padding: 0 100px 35px 50px;
-  }
 
   .job_details {
-    border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
-    h3 {
-      font-size: 16px;
-      font-weight: 700;
-      border-bottom: 1px dotted rgba($color: #000000, $alpha: 0.1);
-      padding: 32px 0 32px 70px;
+    padding: 79px 0px 0px 0px;
+  }
+  .header {
+    position: relative;
+    background: #000;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3,
+    h5,
+    p,
+    small {
+      padding: 0 16px;
     }
-    ul {
-      list-style: none;
-      min-width: 450px;
-      padding: 50px 100px 0 70px;
 
-      li {
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-        margin-bottom: 32px;
+    .badge {
+      display: flex;
+      align-items: center;
 
-        small {
-          font-weight: 700;
-          text-transform: uppercase;
-          font-size: 10px;
-        }
+      img {
+        width: 16px;
+        margin-right: 8px;
+      }
+    }
 
-        span {
-          width: 200px;
+    .back_action {
+      padding: 16px;
+      text-align: right;
+      img {
+        width: 32px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    h3 {
+      font-family: "futura-pt-condensed", sans-serif;
+      font-weight: 800;
+      font-size: 8vw;
+      line-height: 0.8;
+      color: #fff;
+      margin: 16px 0;
+    }
+
+    .company_badge {
+      display: flex;
+      padding-bottom: 16px;
+      a {
+        background: #111111;
+        color: #fff;
+        padding: 16px 0;
+        position: absolute;
+        font-family: "rift", sans-serif;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        bottom: -50px;
+        left: 0;
+      }
+
+      span {
+        .location,
+        .company {
+          padding-top: 16px;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 16px;
+            margin-right: 8px;
+          }
         }
       }
     }
   }
+
+  .main {
+    padding: 80px 16px 32px 16px;
+
+    .job_details {
+      display: none;
+    }
+
+    .description_warpper {
+      h3 {
+        font-family: "rift", sans-serif;
+        font-weight: 700;
+        font-size: 5vw;
+      }
+    }
+  }
 }
-
-// .job_card {
-
-//   .main {
-//     padding: 50px 100px;
-//     background: #fff;
-//   }
-// }
-
-// .how_to_apply {
-//   background: #ffe604;
-//   padding: 16px 16px 0 16px;
-//   text-align: center;
-//   transition: 0.3s;
-// }
-
-// .company_card {
-//   & * {
-//     // margin: 0;
-//     // padding: 0;
-//   }
-//   background: rgb(122, 201, 67);
-//   background: linear-gradient(
-//     -135deg,
-//     rgba(122, 201, 67, 1) 8%,
-//     rgb(76, 165, 13) 100%
-//   );
-
-//   overflow: hidden;
-//   padding: 32px 100px;
-//   display: flex;
-//   align-items: center;
-//   position: relative;
-
-//   .avatar {
-//     width: 80px;
-//     height: 80px;
-//     border-radius: 50%;
-//     border: 8px solid rgba($color: #000000, $alpha: 0.05);
-//     padding: 16px;
-//     background: #fff;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     overflow: hidden;
-
-//     img {
-//       width: 100%;
-//     }
-//   }
-
-//   .header,
-//   .main {
-//     z-index: 1;
-//   }
-
-//   .main {
-//     padding: 0 0 0 32px;
-//     display: flex;
-//     align-items: center;
-//     width: 100%;
-
-//     .company_job_title {
-//       width: 400px;
-//     }
-
-//     .company,
-//     .location,
-//     .title {
-//       color: #fff;
-//     }
-
-//     .space {
-//       flex: 1;
-//     }
-
-//     .title {
-//       font-size: 1.5em;
-//       font-weight: 700;
-//       margin-top: 8px;
-//     }
-
-//     .badge {
-//       background: #ffe604;
-//       padding: 1px 8px;
-//       display: inline-block;
-//       color: #47a304;
-//       font-size: 0.5em;
-//       border-radius: 50px;
-//     }
-
-//     .address {
-//       text-align: right;
-//       .action {
-//         letter-spacing: 0.2em;
-//         font-size: 0.8em;
-//         font-weight: 700;
-//         padding: 8px 16px;
-//         display: inline-block;
-//         color: #fff;
-//         border-radius: 50px;
-//         box-shadow: 0 0 0 1.5px #fff;
-//         text-decoration: none;
-
-//         &:hover {
-//           color: #7ac943;
-//           box-shadow: inset 0 0 0 100px #fff;
-//           transition: 0.3s;
-//           cursor: pointer;
-//         }
-//       }
-//     }
-//   }
-
-//   .circles {
-//     position: absolute;
-//     width: 250px;
-//     height: 250px;
-//     border-radius: 50%;
-//     background: rgb(122, 201, 67);
-//     background: linear-gradient(
-//       -135deg,
-//       rgba(122, 201, 67, 1) 8%,
-//       rgb(65, 151, 3) 100%
-//     );
-
-//     &.one {
-//       left: -300px;
-//       top: 30px;
-//       width: 850px;
-//       height: 850px;
-//     }
-//     &.two {
-//       right: -100px;
-//       top: -100px;
-//       width: 200px;
-//       height: 200px;
-//       opacity: 0.3;
-//     }
-//     &.three {
-//       left: 650px;
-//       bottom: 30px;
-//       width: 50px;
-//       height: 50px;
-//     }
-//   }
-// }

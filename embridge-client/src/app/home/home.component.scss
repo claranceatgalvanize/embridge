@@ -5,33 +5,40 @@
   }
 }
 
-.home_wrapper {
-  background: #000;
-  height: 100vh;
-  padding: 70px 0 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (min-width: 768px) {
+  .home_wrapper {
+    background: #000;
+    background-image: url("https://external-preview.redd.it/TrRBQXDaearZE_uyeg8-UivSxRnb-jPjK5hUhMYpoUc.png?auto=webp&s=1359601a7ed5962123bc26ce2925c0d17501405a");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom 0px right -50px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    position: absolute;
 
-  .signin {
-    width: 300px;
-    height: 100%;
-    border-right: 1px solid rgba($color: #fff, $alpha: 0.05);
+    .sidebar {
+      height: 100%;
+      width: 100px;
+      overflow-x: hidden;
+      border-right: 1px solid rgba($color: #fff, $alpha: 0.05);
 
-    position: relative;
-
-    .signin_wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      transform: rotate(-0.25turn);
-      bottom: 170px;
-      left: -98px;
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 50px;
+        height: 100%;
+      }
 
       button {
-        width: 80px;
-        margin-right: 32px;
+        margin-top: 150px;
+        transform: rotate(-90deg);
         padding: 8px 16px;
         background: none;
         color: #444;
@@ -54,93 +61,127 @@
       }
 
       h3 {
+        transform: rotate(-90deg);
         font-family: "rift", sans-serif;
         font-weight: 700;
         font-size: 12px;
         color: #444;
-        width: 200px;
+        width: 250px;
       }
     }
-  }
 
-  .findyourfit {
-    padding: 32px;
+    .main_content {
+      padding: 0 50px;
 
-    h3 {
-      font-family: "futura-pt-condensed", sans-serif;
-      font-weight: 800;
-      letter-spacing: -4px;
-      font-size: 150px;
-      line-height: 0.8;
-      color: #fff;
-    }
-
-    button {
-      width: 400px;
-      margin-top: 32px;
-      padding: 16px 0;
-      background: none;
-      color: #aaa;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 1.5px;
-      font-family: rift, sans-serif;
-      border: 1px solid rgba($color: #aaa, $alpha: 0.09);
-
-      &:hover {
-        cursor: pointer;
+      h3 {
+        font-family: "futura-pt-condensed", sans-serif;
+        font-weight: 800;
+        letter-spacing: -3.5px;
+        font-size: 100px;
+        width: 750px;
+        line-height: 0.72;
         color: #fff;
-        border: 1px solid #fff;
+        text-shadow: 0 0 20px #000;
       }
 
-      &:focus {
-        outline: none;
-        color: #fff;
-        border: 1px solid #fff;
+      button {
+        width: 400px;
+        margin-top: 32px;
+        padding: 16px 0;
+        background: none;
+        color: #aaa;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        font-family: rift, sans-serif;
+        border: 1px solid rgba($color: #aaa, $alpha: 0.09);
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+
+        &:focus {
+          outline: none;
+          color: #fff;
+          border: 1px solid #fff;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
   .home_wrapper {
-    .signin,
-    .divider {
+    background-image: url("https://external-preview.redd.it/TrRBQXDaearZE_uyeg8-UivSxRnb-jPjK5hUhMYpoUc.png?auto=webp&s=1359601a7ed5962123bc26ce2925c0d17501405a");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom 0px right -50px;
+
+    .main_content {
+      padding: 0 32px;
+      width: 500px;
+
+      h3 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .home_wrapper {
+    background: #000;
+    background-image: url("https://external-preview.redd.it/TrRBQXDaearZE_uyeg8-UivSxRnb-jPjK5hUhMYpoUc.png?auto=webp&s=1359601a7ed5962123bc26ce2925c0d17501405a");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom 0px right 0px;
+
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+    .sidebar {
       display: none;
     }
 
-    .findyourfit {
+    .main_content {
+      padding: 32px;
+
       h3 {
-        padding: 0px;
+        font-family: "futura-pt-condensed", sans-serif;
+        font-weight: 800;
+        letter-spacing: -1px;
+        font-size: 12vw;
+        line-height: 0.8;
+        color: #fff;
       }
-    }
 
-    button {
-      background: #fff;
-    }
-  }
-}
+      button {
+        width: 100%;
+        margin-top: 50px;
+        padding: 16px 0;
+        background: none;
+        color: #aaa;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        font-family: rift, sans-serif;
+        border: 1px solid rgba($color: #aaa, $alpha: 0.09);
 
-@media screen and (max-width: 425px) {
-  .home_wrapper {
-    button {
-      background: #fff;
-      border: none;
-    }
-  }
-}
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          border: 1px solid #fff;
+        }
 
-@media screen and (max-width: 320px) {
-  .findyourfit {
-    h3 {
-      transform: scale(0.9);
-      text-align: center;
-      letter-spacing: 1px;
-      font-size: 75px;
-      line-height: 0.75;
-      text-transform: uppercase;
-      font-family: "futura-pt-condensed", sans-serif;
-      font-weight: 800;
+        &:focus {
+          outline: none;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+      }
     }
   }
 }

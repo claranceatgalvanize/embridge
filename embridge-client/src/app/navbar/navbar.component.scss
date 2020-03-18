@@ -2,7 +2,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 1;
-  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  border-bottom: 1px solid rgba($color: #fff, $alpha: 0.05);
   * {
     font-family: "rift", sans-serif;
     font-weight: 700;
@@ -17,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
+  background: #000;
 }
 
 .brand {
@@ -49,11 +49,11 @@ nav {
     font-size: 1rem;
     letter-spacing: 1.5px;
     background: none;
-    color: #000;
+    color: #fff;
 
     &:hover {
       cursor: pointer;
-      box-shadow: inset 0 -8px 0 0 #000;
+      box-shadow: inset 0 -8px 0 0 #fff;
       transition: all 0.5s ease-in-out;
     }
 

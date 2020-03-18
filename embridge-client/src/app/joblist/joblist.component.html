@@ -1,8 +1,10 @@
 <app-line-prelarder *ngIf="loadingState"></app-line-prelarder>
 <div class="job_container">
   <div *ngIf="!loadingState" class="search">
-    <h3>Your dream job’s just a search away…</h3>
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Keywords" />
+    <span>
+      <h3>Your dream job’s just a search away…</h3>
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Keywords" />
+    </span>
   </div>
   <div class="job_list">
     <div
